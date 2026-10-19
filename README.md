@@ -225,16 +225,36 @@ git push origin main
 > Если вы обнаружили ошибку в этом тексте - сообщите пожалуйста автору!
 
 '''Mermaid
-mindmap
-    root((Навыки))
-    root --> HTML
-    root --> CSS
-    root --> JavaScript
-    root --> Английский[Английский<br/>(A1–A2)]
-    root --> Редактирование
-    HTML --> Семантика
-    CSS --> Flexbox
-    CSS --> Grid
-    JavaScript --> DOM
-    JavaScript --> События
+# Егор | Портфолио веб‑разработчика (17 лет)
+
+Мой личный сайт‑визитка на HTML/CSS/JS. Без тяжёлых картинок — чистый код, адаптивная сетка и аккуратные анимации.
+
+## Структура проекта
+
+```mermaid
+graph TD
+    A[Главная<br/>index.html] --> B[Обо мне<br/>about.html]
+    A --> C[Навыки<br/>skills.html]
+    A --> D[Портфолио<br/>portfolio.html]
+    A --> E[Контакты<br/>contact.html]
+
+    style A fill:#3b82f6,stroke:#1e40af,stroke-width:2px,color:white
+    style B fill:#ffffff,stroke:#ccc
+    style C fill:#ffffff,stroke:#ccc
+    style D fill:#ffffff,stroke:#ccc
+    style E fill:#ffffff,stroke:#ccc
+
+    subgraph Files
+        direction TB
+        F[css/style.css]
+        G[js/main.js]
+        H[images/ (пустая)]
+    end
+
+    A -.->|использует| F
+    B -.->|использует| F
+    C -.->|использует| F & G
+    D -.->|использует| F
+    E -.->|использует| F
+
 '''
