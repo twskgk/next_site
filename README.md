@@ -223,3 +223,18 @@ git push origin main
 ### Выполненные задания присылать в чат Собрания или преподавателю в Телеграм
 
 > Если вы обнаружили ошибку в этом тексте - сообщите пожалуйста автору!
+
+'''Mermaid
+mindmap
+    root((Навыки))
+    root --> HTML
+    root --> CSS
+    root --> JavaScript
+    root --> Английский[Английский<br/>(A1–A2)]
+    root --> Редактирование
+    HTML --> Семантика
+    CSS --> Flexbox
+    CSS --> Grid
+    JavaScript --> DOM
+    JavaScript --> События
+'''
