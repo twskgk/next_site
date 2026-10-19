@@ -42,6 +42,39 @@ portfolio-site/
 └── images/
 
 ```
+```mermaid
+graph TD
+    ROOT["📁 project-root/"]
+    
+    ROOT --> INDEX["📄 index.html"]
+    ROOT --> ABOUT["📄 about.html"]
+    ROOT --> SERVICES["📄 services.html"]
+    ROOT --> PORTFOLIO["📄 portfolio.html"]
+    ROOT --> CONTACT["📄 contact.html"]
+    ROOT --> README["📄 README.md"]
+    ROOT --> CSS["📁 css/"]
+    ROOT --> JS["📁 js/"]
+    
+    CSS --> STYLE["📄 style.css"]
+    JS --> SCRIPT["📄 script.js"]
+    
+    STYLE -.->|"link rel=stylesheet"| INDEX
+    STYLE -.->|"link rel=stylesheet"| ABOUT
+    STYLE -.->|"link rel=stylesheet"| SERVICES
+    STYLE -.->|"link rel=stylesheet"| PORTFOLIO
+    STYLE -.->|"link rel=stylesheet"| CONTACT
+    
+    SCRIPT -.->|"script src"| INDEX
+    SCRIPT -.->|"script src"| ABOUT
+    SCRIPT -.->|"script src"| SERVICES
+    SCRIPT -.->|"script src"| PORTFOLIO
+    SCRIPT -.->|"script src"| CONTACT
+    
+    style ROOT fill:#1a1a2e,color:#fff
+    style CSS fill:#e94560,color:#fff
+    style JS fill:#16213e,color:#fff
+    style README fill:#888,color:#fff
+```
 
 ## 🛠️ Процесс разработки
 
@@ -224,76 +257,3 @@ git push origin main
 
 > Если вы обнаружили ошибку в этом тексте - сообщите пожалуйста автору!
 
-
-# Егор | Портфолио веб‑разработчика (17 лет)
-
-Мой личный сайт‑визитка на HTML/CSS/JS. Без тяжёлых картинок — чистый код, адаптивная сетка и аккуратные анимации.
-
-## Структура проекта
-
-```mermaid
-graph TD
-    A[Главная<br/>index.html] --> B[Обо мне<br/>about.html]
-    A --> C[Навыки<br/>skills.html]
-    A --> D[Портфолио<br/>portfolio.html]
-    A --> E[Контакты<br/>contact.html]
-
-    style A fill:#3b82f6,stroke:#1e40af,stroke-width:2px,color:white
-    style B fill:#ffffff,stroke:#ccc
-    style C fill:#ffffff,stroke:#ccc
-    style D fill:#ffffff,stroke:#ccc
-    style E fill:#ffffff,stroke:#ccc
-
-    subgraph Files
-        direction TB
-        F[css/style.css]
-        G[js/main.js]
-        H[images/ (пустая)]
-    end
-
-    A -.->|использует| F
-    B -.->|использует| F
-    C -.->|использует| F & G
-    D -.->|использует| F
-    E -.->|использует| F
-mindmap
-  root((Навыки Егора))
-  root --> HTML/CSS
-  root --> JavaScript
-  root --> Английский (A1-A2)
-  root --> Редактирование текста
-
-  HTML/CSS --> Семантическая вёрстка
-  HTML/CSS --> Flexbox & Grid
-  HTML/CSS --> Адаптивность
-
-  JavaScript --> Работа с DOM
-  JavaScript --> События и логика
-  JavaScript --> LocalStorage
-
-  Английский (C1-C2) --> Грамматика
-  Английский (C1-C2) --> Словарный запас
-  Английский (C1-C2) --> Разговорная практика
-
-  Редактирование текста --> Структурирование
-  Редактирование текста --> Удаление "воды"
-  Редактирование текста --> Понятность
-gantt
-    title Этапы создания сайта-визитки
-    dateFormat  YYYY-MM-DD
-    excludes    weekends
-
-    section Планирование
-    Структура папок и файлов     :a1, 2024-10-25, 1d
-    Прототип навигации           :a2, after a1, 1d
-
-    section Разработка
-    Главная страница             :b1, 2024-10-27, 2d
-    Страницы: Обо мне, Навыки    :b2, after b1, 3d
-    Портфолио и Контакты         :b3, after b2, 2d
-    JS-анимации появления блоков  :b4, after b3, 1d
-
-    section Тестирование и Деплой
-    Проверка на мобильном        :c1, 2024-11-03, 1d
-    GitHub Pages / Vercel        :c2, after c1, 1d
-    ```
